@@ -1,4 +1,8 @@
 # Group2
+
+"The goal for this project is to tell a cohesive story using a dataset"
+  ~Video narrator guy, module 20.0.2
+
 # Deliverable 1 Requirements:
 
 ## Presentation
