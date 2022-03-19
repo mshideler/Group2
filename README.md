@@ -4,7 +4,8 @@
 The topic of this project is predicting the quality of wine based on envionmental factors such as geography, temperature and rainfall.
 
 # Data Sources
-## Enviroment
+## Environment
+### Environment Data 1
 -
 -
 
@@ -15,6 +16,7 @@ The topic of this project is predicting the quality of wine based on envionmenta
 - Target variable is the 'points' field
 - Features include 'province', 'region', 'variety' and 'winery'
 
+### Another wine data?
 
 # Communication Stragety
 
