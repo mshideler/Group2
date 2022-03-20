@@ -37,7 +37,7 @@ The topic of this project is predicting the quality of wine based on environment
 - Sicily & Sardinia, Italy
 - Champagne, France
 
-# Communication Stragety
+# Communication Strategy
 
 ### Primary - Slack, Group2 Channel:
 - The primary means of communication will be via the Group2 channel in Slack.
