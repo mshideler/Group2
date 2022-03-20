@@ -1,36 +1,60 @@
-# Group2
+# Group 2 Wineos
 
-"The goal for this project is to tell a cohesive story using a dataset"
-  ~Video narrator guy, module 20.0.2
+# Topic
+The topic of this project is predicting the quality of wine based on envionmental factors such as geography, temperature and rainfall.
+- Do higher temps and rainfall correlate higher or lower quality wine?
+- What affect will future changes in rainfall and temps have on wine quality from various regions
 
-# Deliverable 1 Requirements:
+# Data Sources
+## Environment
+### Environment Data 1
+- https://climateknowledgeportal.worldbank.org/download-data
+-
 
-## Presentation
-Team members have drafted their
-project, including the following:
-- Selected topic
-- Reason why they selected their topic
-- Description of their source of data
-- Questions they hope to answer with the data
+## Wine
+### Wine reviews dataset
+- https://www.kaggle.com/zynicide/wine-reviews?select=winemag-data-130k-v2.csv
+- This data set includes 130,000 records
+- Target variable is the 'points' field
+- Features include 'province', 'region', 'variety' and 'winery'
+- Includes reviews of wines from ~2000 to 2017
+- will need to use RegEx to parse year from title field
 
-Note: The content does not yet need to be in the form of a presentation; text in the README.md works as well.
 
-## Github
-Main Branch includes a README.md, must include:
-- Description of the communication protocols
+Province	Count	Country	WeatherDataRegion
+California	36247	US	California
+Washington	8639	US	Washington
+Bordeaux	5941	France	Aquitaine
+Tuscany	5897	Italy	Tuscany
+Oregon	5373	US	Oregon
+Burgundy	3980	France	Burgundy
+Northern Spain	3851	Spain	Cantabria
+Piedmont	3729	Italy	Piemonte
+Veneto	2716	Italy	Veneto
+New York	2688	US	New York
+Alsace	2440	France	Alsace
+Sicily & Sardinia	1797	Italy	Sicily & Sardinia
+Champagne	1613	France	Champagne Ardenne
 
-#### Individual Branches
-- At least one branch for each team member
-- Each team member has at least four commits from the duration of the first segment
 
-Note: The descriptions and explanations required in all other project deliverables should also be in your README.md as part of your outline, unless otherwise noted.
+### Another wine data?
 
-## Machine Learning Model
-Team members present a provisional machine learning model that stands in for the final machine learning model and accomplishes the following:
-- Takes in data in from the provisional database
-- Outputs label(s) for input data
+# Communication Stragety
 
-## Database
-Team members present a provisional database that stands in for the final database and accomplishes the following:
-- Sample data that mimics the expected final database structure or schema
-- Draft machine learning module is connected to the provisional database
+### Primay - Slack:
+- Group2 channel
+
+### Secondary - Email:
+-Zack Gheen
+zgheen88@gmail.com
+
+-Kyle Johnson
+kyle@ksjohnsons.com
+
+-Marisa Shideler
+marisa.shideler@outlook.com
+
+-Brenya Skaggs
+brenyask@gmail.com
+
+### Tertiary - Cell?
