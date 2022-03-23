@@ -1,0 +1,142 @@
+# Manipulating Weather Data
+
+## Raw Data
+
+The raw weather data came from World Bank Group, Climate Change Knowledge Portal and was dowloaded for France, Italy, Spain and the US.  Observed, annual mean temperature and total precipitation as well as projected, annual mean temperature and total precipitation were downloaded.  
+
+## Historical and Projected Data
+
+Historical and projected precipitation and temperature were extracted from the country data for the following provinces/states:
+
+- Alsace, France
+- Aquitaine, France
+- Burgundy, France
+- Champagne Ardenne, France
+- Piemonte, Italy
+- Sardinia, Italy
+- Sicily, Italy
+- Tuscany, Italy
+- Veneto, Italy
+- Cantabria, Spain
+- California, US
+- New York, US
+- Oregon, US
+- Washington, US
+
+Each download appeared like the following with data from 1901 - 2020 for the country as a whole and for each province.
+
+![Example Download()
+
+Pandas was used to rearrange the data:
+
+```
+# Import dependency
+import pandas as pd
+
+# Read historic precipitation data in CSV to a DataFrame
+file_path1 = "Spain Precipitation Historic.csv"
+precip_df = pd.read_csv(file_path1)
+
+# Rename unnamed column
+precip_df = precip_df.rename(columns={'Unnamed: 0': 'Year'})
+
+# Create new dataframe with applicable provinces
+new_precip_df = precip_df[['Year', 'Cantabria']]
+
+# Rename columns to ID them as precipitation columns
+new_precip_df = new_precip_df.rename(columns={'Cantabria': 'Cantabria Precip'})
+
+# Read historic temperature data in CSV to a DataFrame
+file_path2 = "Spain Temp Historic.csv"
+temp_df = pd.read_csv(file_path2)
+
+# Rename unnamed column
+temp_df = temp_df.rename(columns={'Unnamed: 0': 'Year'})
+
+# Create new dataframe with applicable provinces
+new_temp_df = temp_df[['Year', 'Cantabria']]
+
+# Rename columns to ID them as temperature columns
+new_temp_df = new_temp_df.rename(columns={'Cantabria': 'Cantabria Temp'})
+
+# Merge the new_precip and new_temp DataFrames into one DataFrame
+spain_df = pd.merge(new_precip_df, new_temp_df, on='Year')
+
+# Add a column to specify which province the precipitation and temperature data is for
+spain_df['Province'] = pd.Series(['Cantabria' for x in range(len(spain_df.index))])
+
+# Rename the precipitation and temperature columns by replacing the province name with "Historical"
+spain_df = spain_df.rename(columns={'Cantabria Precip': 'Historical Precip', 'Cantabria Temp': 'Historical Temp'})
+
+# Reorder the columns
+spain_df = spain_df[['Province', 'Year', 'Historical Precip', 'Historical Temp']]
+
+# Save DataFrame to CSV
+spain_df.to_csv('historical_weather_spain.csv', index=False)
+```
+
+And here is the resulting DataFrame that got saved as a CSV file:
+
+![ExampleDF]()
+
+The above steps were performed for each province in a country to produce a Historical Data CSV and Projected Data CSV for each country.
+
+## Combined Data
+
+The historical CSV files and the projected CSV files were then combined using the following code:
+
+```
+# Import dependency
+import pandas as pd
+
+# Read historic weather data in CSVs to a DataFrame
+# Declare empty DataFrame
+historical_weather_df = pd.DataFrame()
+
+file_paths = ("historical_weather_france.csv", "historical_weather_italy.csv", "historical_weather_spain.csv", "historical_weather_us.csv")
+
+for path in file_paths:
+    temp_df = pd.read_csv(path)
+    historical_weather_df = pd.concat([historical_weather_df, temp_df])
+
+# Save historical_weather_df to CSV
+historical_weather_df.to_csv('historical_weather.csv', index=False)
+
+# Read projected weather data in CSVs to a DataFrame
+# Declare empty DataFrame
+projected_weather_df = pd.DataFrame()
+
+file_paths = ("projected_weather_france.csv", "projected_weather_italy.csv", "projected_weather_spain.csv", "projected_weather_us.csv")
+
+for path in file_paths:
+    temp_df = pd.read_csv(path)
+    projected_weather_df = pd.concat([projected_weather_df, temp_df])
+
+# Save projected_weather_df to CSV
+projected_weather_df.to_csv('projected_weather.csv', index=False)
+
+# Add "Timeseries" column to ID data in historical DF as Historical
+historical_weather_df['Timeseries'] = pd.Series(['Historical' for x in range(len(historical_weather_df.index))])
+
+# Rename Historical Precip and Historical Temp columns
+historical_weather_df = historical_weather_df.rename(columns={'Historical Precip': 'Precipitation', 'Historical Temp': 'Temperature'})
+
+# Add "Timeseries" column to ID data in projected DF as Projected
+projected_weather_df['Timeseries'] = pd.Series(['Projected' for x in range(len(projected_weather_df.index))])
+
+# Rename Projected Precip and Projected Temp columns
+projected_weather_df = projected_weather_df.rename(columns={'Projected Precip': 'Precipitation', 'Projected Temp': 'Temperature'})
+
+# Combine the historical data with the projected data
+combined_weather_df = pd.concat([historical_weather_df, projected_weather_df])
+
+# Save projected_weather_df to CSV
+combined_weather_df.to_csv('combined_weather.csv', index=False)
+```
+
+This resulted in the creation of three CSV files containing only the combined historical data, only the combined projected data and then the combined historical and projected data resulting in an output similar to the following:
+
+![Combined Weather Output]()
+
+We anticipate using the combined data in our analysis of wine quality; however, the other two files may be of use as well.
+
