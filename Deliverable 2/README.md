@@ -138,5 +138,5 @@ This resulted in the creation of three CSV files containing only the combined hi
 
 ![Combined Weather Output]()
 
-We anticipate using the combined data in our analysis of wine quality; however, the other two files may be of use as well.
+We anticipate using the combined data in our analysis of wine quality; however, the other two files may be of use as well.  These files have been uploaded to a bucket at S3.
 
