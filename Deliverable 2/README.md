@@ -25,7 +25,7 @@ Historical and projected precipitation and temperature were extracted from the c
 
 Each download appeared like the following with data from 1901 - 2020 for the country as a whole and for each province.
 
-![Example Download()
+![Example Download](https://github.com/mshideler/Group2/blob/mshideler/Deliverable%202/Resources/ExampleDownload.PNG)
 
 Pandas was used to rearrange the data:
 
@@ -77,7 +77,7 @@ spain_df.to_csv('historical_weather_spain.csv', index=False)
 
 And here is the resulting DataFrame that got saved as a CSV file:
 
-![ExampleDF]()
+![ExampleDF](https://github.com/mshideler/Group2/blob/mshideler/Deliverable%202/Resources/ExampleDF.PNG)
 
 The above steps were performed for each province in a country to produce a Historical Data CSV and Projected Data CSV for each country.
 
@@ -136,7 +136,7 @@ combined_weather_df.to_csv('combined_weather.csv', index=False)
 
 This resulted in the creation of three CSV files containing only the combined historical data, only the combined projected data and then the combined historical and projected data resulting in an output similar to the following:
 
-![Combined Weather Output]()
+![Combined Weather Output](https://github.com/mshideler/Group2/blob/mshideler/Deliverable%202/Resources/WeatherOutputExample.png)
 
 We anticipate using the combined data in our analysis of wine quality; however, the other two files may be of use as well.  These files have been uploaded to a bucket at S3.
 
