@@ -130,6 +130,14 @@ projected_weather_df = projected_weather_df.rename(columns={'Projected Precip': 
 # Combine the historical data with the projected data
 combined_weather_df = pd.concat([historical_weather_df, projected_weather_df])
 
+# Additional edits after wine reviews EDA
+# Remove Sardinia/Sardegna data
+combined_weather_df = combined_weather_df[combined_weather_df.Province != 'Sardegna']
+
+# Rename Toscana and Bourgogne so they match the corresponding province names in wine reviews
+combined_weather_df.loc[combined_weather_df['Province']=='Toscana', 'Province']="Tuscany"
+combined_weather_df.loc[combined_weather_df['Province']=='Bourgogne', 'Province']="Burgundy"
+
 # Save projected_weather_df to CSV
 combined_weather_df.to_csv('combined_weather.csv', index=False)
 ```
