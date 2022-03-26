@@ -155,7 +155,7 @@ We anticipate using the combined data in our analysis of wine quality; however, 
 
 The raw wine data, which contain over 80,000 wine reviews, came from Kaggle.    This dataset contains varieties of wine along with other information such where and when they came from, what wineries were used, how much they cost and what the review rating is.  The dataset initially looked like this:
 
-![Raw Wine Data]()
+![Raw Wine Data](https://github.com/mshideler/Group2/blob/mshideler/Deliverable%202/Resources/Raw_wine_data.PNG)
 
 ## Data Cleaning
 
@@ -214,6 +214,6 @@ wine_df_regions.to_csv('cleaned_winedata.csv', index=False)
 
 The final wine dataset appears as follows:
 
-![Final Wine DF]()
+![Final Wine DF](https://github.com/mshideler/Group2/blob/mshideler/Deliverable%202/Resources/Final_wine_DF.PNG)
 
 Like for the weather data, this DataFrame was exported to CSV and uploaded to AWS S3.
