@@ -148,3 +148,72 @@ This resulted in the creation of three CSV files containing only the combined hi
 
 We anticipate using the combined data in our analysis of wine quality; however, the other two files may be of use as well.  These files have been uploaded to a bucket at S3.
 
+
+# Cleaning Wine Data
+
+## Raw Data
+
+The raw wine data, which contain over 80,000 wine reviews, came from Kaggle.    This dataset contains varieties of wine along with other information such where and when they came from, what wineries were used, how much they cost and what the review rating is.  The dataset initially looked like this:
+
+![Raw Wine Data]()
+
+## Data Cleaning
+
+The data cleaning for the wine reviews was minimal compared to what was needed for the weather data.  There is only one file to work with, so changes were made using Pandas in the following code:
+
+```
+# Import dependency
+import pandas as pd
+
+# Read in wine csv
+wine_df = pd.read_csv("winedata.csv")
+wine_df.head()
+
+# Rename unnamed column
+wine_df = wine_df.rename(columns={'Unnamed: 0': 'id'})
+
+# Extract year column from title field, pop title
+wine_df['year']=wine_df['title'].str.extract(r'([1-2]\d{3})')
+wine_df.pop('title')
+
+wine_df.head()
+
+# Filter wine_df for regions we want to examine
+regions=['California','Washington','Bordeaux','Tuscany','Oregon','Burgundy','Cantabria','Piedmont','Veneto','New York','Alsace','Sicily & Sardinia','Champagne']
+wine_df_regions=wine_df[wine_df['province'].isin(regions)]
+wine_df_regions
+
+# Drop records with no year
+wine_df_regions.dropna(subset=['year'],inplace=True)
+
+# Drop records from before 1990
+wine_df_regions=wine_df_regions[wine_df_regions['year']>'1990']
+
+wine_df_regions
+
+# Make list of columns to drop and drop them
+columns_to_drop=['id','country','description','designation','price','region_2','region_1','winery']
+wine_df_regions.drop(columns_to_drop,axis=1,inplace=True)
+
+# Replace wine region values with matching regions from weather data
+wine_df_regions.loc[wine_df_regions['province']=='Sicily & Sardinia','province']="Sicilia"
+wine_df_regions.loc[wine_df_regions['province']=='Bordeaux','province']="Aquitaine"
+wine_df_regions.loc[wine_df_regions['province']=='Northern Spain','province']="Cantabria"
+wine_df_regions.loc[wine_df_regions['province']=='Champagne','province']="Champagne-Ardenne"
+
+# Reorder columns
+wine_df_regions = wine_df_regions[['province', 'year', 'variety', 'points']]
+
+wine_df_regions
+
+# Save DataFrame to CSV
+wine_df_regions.to_csv('cleaned_winedata.csv', index=False)
+```
+
+## Resultant Wine Dataset
+
+The final wine dataset appears as follows:
+
+![Final Wine DF]()
+
+Like for the weather data, this DataFrame was exported to CSV and uploaded to AWS S3.
