@@ -200,6 +200,7 @@ wine_df_regions.loc[wine_df_regions['province']=='Sicily & Sardinia','province']
 wine_df_regions.loc[wine_df_regions['province']=='Bordeaux','province']="Aquitaine"
 wine_df_regions.loc[wine_df_regions['province']=='Northern Spain','province']="Cantabria"
 wine_df_regions.loc[wine_df_regions['province']=='Champagne','province']="Champagne-Ardenne"
+wine_df_regions.loc[wine_df_regions['province']=='Piedmont','province']="Piemonte"
 
 # Reorder columns
 wine_df_regions = wine_df_regions[['province', 'year', 'variety', 'points']]
@@ -207,7 +208,7 @@ wine_df_regions = wine_df_regions[['province', 'year', 'variety', 'points']]
 wine_df_regions
 
 # Save DataFrame to CSV
-wine_df_regions.to_csv('cleaned_winedata.csv', index=False)
+wine_df_regions.to_csv('cleaned_winereviews.csv', index=False)
 ```
 
 ## Resultant Wine Dataset
