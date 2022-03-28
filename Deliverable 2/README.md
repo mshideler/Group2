@@ -232,4 +232,25 @@ AS (SELECT * FROM wine_data
 	LEFT JOIN weather_data ON wine_data.province=weather_data.Prov_Weather AND wine_data.year=weather_data.Year_Weather);
 ```
 
-We'll be able to bring the wine_weather_table back into Pandas to use in our machine learning model.
+Then, using SQLAlchemy and Pandas, we read wine_weather_table from SQL into a DataFrame in Pandas.
+
+```
+# Import dependencies
+import pandas as pd
+import psycopg2
+
+import sqlalchemy
+from sqlalchemy import create_engine
+
+# Create an engine instance
+alchemyEngine = create_engine('postgresql+psycopg2://root:Group2Wineos@grp2rdsinstance.cwkbfcctxu7y.us-east-1.rds.amazonaws.com/postgres')
+
+# Connect to PostgreSQL server
+dbConnection = alchemyEngine.connect();
+
+df = pd.read_sql_table('wine_weather_table', dbConnection)
+```
+
+Here is the resulting output we'll use for our machine learning model:
+
+![ML Dataset](https://github.com/mshideler/Group2/blob/mshideler/Deliverable%202/Resources/MLDataset.PNG)
