@@ -138,6 +138,9 @@ combined_weather_df = combined_weather_df[combined_weather_df.Province != 'Sarde
 combined_weather_df.loc[combined_weather_df['Province']=='Toscana', 'Province']="Tuscany"
 combined_weather_df.loc[combined_weather_df['Province']=='Bourgogne', 'Province']="Burgundy"
 
+# Rename Province and Year for SQL join
+combined_weather_df = combined_weather_df.rename(columns={'Province': 'Prov_Weather', 'Year': 'Year_Weather'})
+
 # Save projected_weather_df to CSV
 combined_weather_df.to_csv('combined_weather.csv', index=False)
 ```
@@ -146,7 +149,7 @@ This resulted in the creation of three CSV files containing only the combined hi
 
 ![Combined Weather Output](https://github.com/mshideler/Group2/blob/mshideler/Deliverable%202/Resources/WeatherOutputExample.png)
 
-We anticipate using the combined data in our analysis of wine quality; however, the other two files may be of use as well.  These files have been uploaded to a bucket at S3.
+We anticipate using only the combined data in our analysis of wine quality; however, the other two files may be of use as well.  These files have been uploaded to a bucket at S3.
 
 
 # Cleaning Wine Data
@@ -218,3 +221,15 @@ The final wine dataset appears as follows:
 ![Final Wine DF](https://github.com/mshideler/Group2/blob/mshideler/Deliverable%202/Resources/Final_wine_DF.PNG)
 
 Like for the weather data, this DataFrame was exported to CSV and uploaded to AWS S3.
+
+# Combined Weather and Wine Data
+
+After using Google Colaboratory to write the weather and wine data to an Amazon RDS instance, we joined the data and created a new table using the following bit of SQL:
+
+```
+CREATE TABLE wine_weather_table
+AS (SELECT * FROM wine_data 
+	LEFT JOIN weather_data ON wine_data.province=weather_data.Prov_Weather AND wine_data.year=weather_data.Year_Weather);
+```
+
+We'll be able to bring the wine_weather_table back into Pandas to use in our machine learning model.

@@ -1,4 +1,4 @@
-Province,Year,Precipitation,Temperature,Timeseries
+Prov_Weather,Year_Weather,Precipitation,Temperature,Timeseries
 Alsace,1901,864.18,8.41,Historical
 Alsace,1902,737.39,8.57,Historical
 Alsace,1903,757.38,8.9,Historical
