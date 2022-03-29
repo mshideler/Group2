@@ -229,7 +229,8 @@ After using Google Colaboratory to write the weather and wine data to an Amazon 
 ```
 CREATE TABLE wine_weather_table
 AS (SELECT * FROM wine_data 
-	LEFT JOIN weather_data ON wine_data.province=weather_data.Prov_Weather AND wine_data.year=weather_data.Year_Weather);
+	LEFT JOIN weather_data ON wine_data.province=weather_data.Prov_Weather AND wine_data.year=weather_data.Year_Weather
+	WHERE weather_data.Timeseries = 'Historical');
 ```
 
 Then, using SQLAlchemy and Pandas, we read wine_weather_table from SQL into a DataFrame in Pandas.
@@ -248,7 +249,7 @@ alchemyEngine = create_engine('postgresql+psycopg2://root:Group2Wineos@grp2rdsin
 # Connect to PostgreSQL server
 dbConnection = alchemyEngine.connect();
 
-df = pd.read_sql_table('wine_weather_table', dbConnection)
+df = pd.read_sql_table('wine_and_weather_table', dbConnection)
 ```
 
 Here is the resulting output we'll use for our machine learning model:
