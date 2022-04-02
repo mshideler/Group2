@@ -9,23 +9,15 @@ CREATE TABLE weather_data (
 SELECT * FROM weather_data;
 
 CREATE TABLE wine_data (
+	points INT NOT NULL,
+	price INT NOT NULL,
 	province VARCHAR NOT NULL,
-	year INT NOT NULL,
 	variety VARCHAR NOT NULL,
-	points INT NOT NULL
+	winery VARCHAR NOT NULL,
+	year INT NOT NULL
 );
 
-DROP TABLE weather_data;
-DROP TABLE wine_data;
-DROP TABLE wine_weather_table;
-
 SELECT * FROM wine_data;
-
-CREATE TABLE wine_weather_table
-AS (SELECT * FROM wine_data 
-	LEFT JOIN weather_data ON wine_data.province=weather_data.Prov_Weather AND wine_data.year=weather_data.Year_Weather);
-
-SELECT * FROM wine_weather_table;
 
 CREATE TABLE wine_and_weather_table
 AS (SELECT * FROM wine_data 
