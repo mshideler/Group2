@@ -335,14 +335,21 @@ Here is the resulting output we'll use for our machine learning model:
 ![ML Dataset](https://github.com/mshideler/Group2/blob/mshideler/Deliverable%202/Resources/MLDataset.PNG)
 
 
-Overview of Group 2 Machine Learning Model
-Overview
+# **Overview of Group 2 Machine Learning Model**
+----------------------------------------------------
+
+## **Overview**
+---------------
 Our goal for this project has been to utilize Python libraries and machine learning techniques to manipulate and create a model on data to determine if there is a postive relationship between weather patterns and the quality of wine. We set out initially to determine if increasing global temperatures or changes in precipitation have had an effect on the quality of wine in regions renowned for their wine quality. Specifically we wanted to know if it was possible to predict if wine quality would increase or decrease in relation to these changes in the climate.
 
-Data
+## **Data**
+------------
+
 The original two datasets we used were cleaned and formatted then imported into our PostGreSQL DB instance and joined in the database, we then exported this dataset back into the Model, and began steppping through the process of feature selection.
 
-Multiple Linear Regression
+## **Multiple Linear Regression**
+----------------------------------
+
 We began the process with our library imports, creating a DB instance, and dropping any unnecessary or frivolous columns. We decided to drop all columns except points, price, province, variety, precipitation, and temperature.
 
 image
@@ -371,7 +378,8 @@ Due to the scores we tried to determine the importance of all our features, and 
 
 Our mean_squared_error improved somewhat from 5.7334 to 6.17244, however our R_2 score decreased from .33225 to .28113.
 
-Deep Learning
+## **Deep Learning**
+----------------------
 Due to the ineffectiveness of our Linear Regression Model we then tried our hand at using a Deep Learning Model. Our model set-up involved the three input features from second iteration of linear regression. We had two hidden layers with 20, and 15 nodes respectively. And we used 'Relu' and 'Sigmoid' activation functions
 
 image
