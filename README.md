@@ -352,38 +352,49 @@ The original two datasets we used were cleaned and formatted then imported into 
 
 We began the process with our library imports, creating a DB instance, and dropping any unnecessary or frivolous columns. We decided to drop all columns except points, price, province, variety, precipitation, and temperature.
 
-image
+![image](https://user-images.githubusercontent.com/93295751/161459050-ce2b475f-5b7f-4083-b6d0-e57d08ad5668.png)
+
 
 We then encoded the columns of 'province', and 'variety' in order to get categorical values for these columns.
 
-image
+![image](https://user-images.githubusercontent.com/93295751/161459078-fe07f273-6b17-4d71-914b-5c0f71bddc9a.png)
+
+![image](https://user-images.githubusercontent.com/93295751/161459196-d42e2a97-823d-412e-9d4f-00f69167f1e3.png)
+
+
 
 We then scaled the columns of 'precipitation', 'temperature', and 'price' using 'MinMaxScaler' from SKLearn, this ensured none of our variables showed inflated influence on the results of our model.
 
-image
+![image](https://user-images.githubusercontent.com/93295751/161459158-be244dd2-8673-499a-a8f4-d75e21543038.png)
 
-We then used 'points' column as our model's target and all othger columns as our variables.
 
-image
+We then used 'points' column as our model's target and all other columns as our variables.
 
-image
+![image](https://user-images.githubusercontent.com/93295751/161459274-c7e39d56-7ec5-43e4-976f-ad6e587de674.png)
+
+![image](https://user-images.githubusercontent.com/93295751/161459290-848565be-db7f-41cd-a7d4-77f535318a54.png)
 
 We decided to first try using a Multiple Linear Regression model theorizing it may be a good fit since we wanted to determine the effectiveness of predicting continuous values over a period of time.
 
 We used 'Train, Test, Split' and fit our model with 'X_train', and 'y_train'. We predicited using X_test. Our Mean_squared_error and R2_score came out as '5.7334', and '.33225' respectively
 
-image
+![image](https://user-images.githubusercontent.com/93295751/161459328-557d204a-d50d-4852-93d4-bf6905381db1.png)
 
 Due to the scores we tried to determine the importance of all our features, and found that features 53, 54, and 55 were our more important feratures so reran the model using only these three features.
 
 Our mean_squared_error improved somewhat from 5.7334 to 6.17244, however our R_2 score decreased from .33225 to .28113.
 
+![image](https://user-images.githubusercontent.com/93295751/161459355-ea8632b9-c2c1-4a10-b259-feeeb01e15be.png)
+
+
 ## **Deep Learning**
 ----------------------
 Due to the ineffectiveness of our Linear Regression Model we then tried our hand at using a Deep Learning Model. Our model set-up involved the three input features from second iteration of linear regression. We had two hidden layers with 20, and 15 nodes respectively. And we used 'Relu' and 'Sigmoid' activation functions
 
-image
+![image](https://user-images.githubusercontent.com/93295751/161459375-9fa4faea-1707-4704-820c-bdc0de884f8f.png)
+
 
 After compiling and fitting our model we ran it with 10 training epochs with the following results.
 
-image
+![image](https://user-images.githubusercontent.com/93295751/161459391-01e04c7f-3ab8-4d76-96c0-5fa6771bda00.png)
+
