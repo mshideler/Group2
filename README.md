@@ -61,10 +61,7 @@ this will have an impact on our preferred wine growing regions. Specifically we 
 
 
 
-# Data Exploration Phase
-
-
-## Manipulating Waether Data
+# Data Exploration Phase - Manipulating Weather Data
 
 
 ## Raw Weather Data
@@ -124,7 +121,8 @@ These files have been uploaded to a bucket at S3.
 
 
 
-## Cleaning Wine Data
+# Cleaning Wine Data
+
 
 ## Raw Wine Data
 
@@ -149,7 +147,7 @@ The final wine dataset appears as follows:
 Like for the weather data, this DataFrame was exported to CSV and uploaded to AWS S3. 
 
 
-## Combined Weather and Wine Data
+# Combined Weather and Wine Data
 
 
 After using Google Colaboratory to write the weather and wine data to an Amazon RDS instance, we joined the data and created a new table using the following bit of SQL:
@@ -167,13 +165,10 @@ Here is the resulting output we'll use for our machine learning model:
 
 
 
-# Analysis Phase
+# Analysis Phase - Machine Learning
 
 
-## Machine Learning
-
-
-###### Overview 
+## Overview 
 
 Our goal for this project has been to utilize Python libraries and machine learning techniques to manipulate and create a model on data to determine if there is a postive relationship between weather patterns and the quality of wine. 
 
@@ -182,13 +177,13 @@ We set out initially to determine if increasing global temperatures or changes i
 Specifically we wanted to know if it was possible to predict if wine quality would increase or decrease in relation to these changes in the climate.
 
 
-###### Dataset
+##  Dataset
 
 The original two datasets we used were cleaned and formatted then imported into our PostGreSQL DB instance and 
 joined in the database, we then exported this dataset back into the Model, and began steppping through the process of feature selection.
 
 
-## Multiple Linear Regression
+# Multiple Linear Regression
 
 
 We began the process with our library imports, creating a DB instance, and dropping any unnecessary or frivolous columns. 
@@ -213,7 +208,7 @@ We them used 'points' column as our model's target and all other columns are our
 (image)
 
 
-###### M.L Obstacle
+##  M.L Obstacle
 
 
 We decided to first try using a Multiple Linear Regression model theorizing it may be a good fit since we wanted to determine the effectiveness of predicting continuous values over a period of time.
@@ -229,7 +224,7 @@ Our mean_squared_error improved somewhat from 5.7334 to 6.17244, however our R_2
 (image)
 
 
-## Deep Learning
+# Deep Learning
 
 Due to the ineffectiveness of our Linear Regression Model we then tried our hand at using a Deep Learning Model. Our model set-up involved the three input features from second iteration of linear regression. We had two hidden layers with 20, and 15 nodes respectively. And we used 'Relu' and 'Sigmoid' activation functions
 
