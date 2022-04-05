@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Group 2 Winos</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="Static/css/style.css">  
+</head>
+
+<body>
+    <!--  Jumbotron-->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>Group 2 Winos</h1>
+        <h4>Lorem Ipsum Loquitor</h4>
+      </div>
+    </div>
+    <!--  First body row-->
+    <div class="row">
+      <div class="col-md-4">
+        <div class="well">
+          <h5>Row 1 Column 1 </h5><br> <p>Linear Regression</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h3>Row 1 Column 2</h3><br>
+        <p>This is the body text</p>
+      </div>
+      <div class="col-md-4">
+        <div id="Plot">
+          <h3>Row 1 Column 3</h3><br>
+          <p>for p in provinces:<br>fig=px.scatter(wine_df_regions[wine_df_regions['province']==p],x='price',y='points',title= 'Price vs Points by Region - '+p, trendline='ols')</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+        <h5>Row 2 Column 1 </h5><br> <p>Leaflet js map</p>       
+      </div>
+      <div class="col-md-5">
+        <h5>Row 2 Column 2 </h5><br> <p>Static Chart</p>            
+      </div>
+      <div class="col-md-2">
+        <h5>Row 2 Column 3 </h5><br> <p>Bottle 'O Booze</p>          
+      </div>      
+    </div>
+  </div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="Static/js/temp.js"></script>
+
+</body>
+
+</html>
