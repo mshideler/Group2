@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Group 2 Winos</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/css/style.css">  
+</head>
+
+<body>
+    <!--  Jumbotron-->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center"> 
+        <h1>Group 2 Winos</h1>
+        <h4>Lorem Ipsum Loquitor</h4>
+      </div>
+    </div>
+    <!--  First body row-->
+    <div class="row">
+      <div class="col-md-4">
+        <div class="well">
+          <h4>Wine Rating</h4><br>
+          <label for="province">Province </label>
+          <input type="text" name="province" value="Alsace"> </input><br>
+          <label for="price">Price ($) </label>
+          <input type="number" name="price" value="15"> </input><br>
+          <label for="temp">Temperature (C) </label>
+          <input type="number" name="temp" value="10"> </input><br>
+          <label for="precip">Precipitation (mm) </label>
+          <input type="number" name="precip" value="1500"> </input><br>
+          <input type="button" value="Predict"></input>
+          <input type="button" value="Reset"></input>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h3>Row 1 Column 2</h3><br>
+        <p>This is the body text</p>
+      </div>
+      <div class="col-md-4">
+        <div id="Plot">
+          <h3>Row 1 Column 3</h3><br>
+          <p>for p in provinces:<br>fig=px.scatter(wine_df_regions[wine_df_regions['province']==p],x='price',y='points',title= 'Price vs Points by Region - '+p, trendline='ols')</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <h5>Row 2 Column 1 </h5><br> <p>Leaflet js map</p>       
+      </div>
+      <div class="col-md-6">
+        <h5>Row 2 Column 2 </h5><br> 
+        <img src="static/images/Predicted_v_Actual Points.png" width="800" align="center">         
+      </div>
+      <!--Remove col
+      <div class="col-md-4">
+        <h5>Row 2 Column 3 </h5><br>
+        <img src="static/images/WineBottle.png" width="100" align="right">
+      </div>   -->   
+    </div>
+  </div> 
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="static/js/temp.js"></script>
+
+</body>
+
+</html>
