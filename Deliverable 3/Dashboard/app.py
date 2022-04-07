@@ -1,6 +1,7 @@
+
 # Import dependencies
 from flask import Flask, render_template
-import pandas as pd
+#import pandas as pd
 
 # Create a new Flask instance
 app = Flask(__name__)
