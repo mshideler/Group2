@@ -33,7 +33,7 @@
           <!--<input type="text" name="province" placeholder="Alsace" style="width:175px;"> </input><br>-->
           <form>
           <label> Province </label>
-          <select>
+          <select class="MLData">
             <option value= "California, US"> California, US
             </option>
             <option value= "Washington, US"> Washington, US
@@ -68,7 +68,7 @@
           <!-- <input type="text" name="variety" placeholder="Pinot Noir" style="width:189px;"> </input><br>-->
           <form>
           <label> Variety </label>
-          <select>
+          <select class="MLData">
             <option value= "Pinot Gris"> Pinot Gris
             </option>
             <option value= "Pinot Noir"> Pinot Noir
@@ -158,15 +158,15 @@
         </form>
           
           <label for="price">Price ($) </label>
-          <input type="number" name="price" placeholder="15" style="width:179px;"> </input><br>
+          <input class="MLData" type="number" name="price" placeholder="15" style="width:179px;"> </input><br>
           <label for="temp">Temperature (C) </label>
-          <input type="number" name="temp" placeholder="10" style="width:128px;"> </input><br>
+          <input class="MLData" type="number" name="temp" placeholder="10" style="width:128px;"> </input><br>
           <label for="precip">Precipitation (mm) </label>
-          <input type="number" name="precip" placeholder="1500" style="width:112px;"> </input><br><br>
+          <input class="MLData" type="number" name="precip" placeholder="1500" style="width:112px;"> </input><br><br>
           <label for="predict">Predicted Wine Rating </label>
           <input type="number" name="predict" style="width:86px;"> </input><br>
-          <input type="button" value="Predict"></input>
-          <input type="button" value="Reset"></input>
+          <a class="btn btn-primary btn-md" role="button">Predict</a>
+          <a class="btn btn-primary btn-bk" role="button">Reset</a>
         </div>
       </div>
       <div class="col-md-4">
@@ -185,7 +185,7 @@
         <div id="mapid"></div>  
       </div>
       <div class="col-md-6">
-        <h5>Row 2 Column 2 </h5><br> 
+        <h5>Text about this graph</h5><br> 
         <img src="static/images/Predicted_v_Actual Points.png" width="800" align="center">         
       </div>
       <!--Remove col

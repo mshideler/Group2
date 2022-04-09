@@ -8,3 +8,18 @@ function test() {
   // Attach an event to listen for changes to each filter
 }  
 d3.selectAll('input').on('change',test);
+
+function ML(event) {
+  // event.preventDefault();
+  let values = [];
+  for (const feature of [].slice.call(document.getElementsByClassName("MLData"))){
+    values.push(feature.value);
+  }
+  // console.log(values);
+  url = '/predict/';
+  for (const value in values) {
+    url+=values[value]+'/';
+  }
+  console.log(url);
+}
+d3.select("a").on("click", ML);
