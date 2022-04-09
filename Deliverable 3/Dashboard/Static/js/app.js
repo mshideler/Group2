@@ -21,7 +21,8 @@ function ML(event) {
   for (const value in values) {
     url+=values[value]+'/';
   }
-  console.log(url);
+  url=url.slice(0,-1);
+  window.location.href=url;
 }
 //watch for Button click 
 d3.select("a").on("click", ML);
