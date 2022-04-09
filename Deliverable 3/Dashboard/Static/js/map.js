@@ -1,6 +1,3 @@
-// Add console.log to check to see if our code is working.
-console.log("it's working!!!");
-
 // We create the second tile layer that will be the background of our map.
 let satelliteStreets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 	attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -9,7 +6,7 @@ let satelliteStreets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/sate
 });
 
 // Create the map object with center, zoom level and default layer.
-let map = L.map("mapid", {
+let map = L.map('mapid', {
 	center: [38, -50],
 	zoom: 4,
 	layers: [satelliteStreets]
@@ -43,6 +40,7 @@ d3.json("https://raw.githubusercontent.com/kylejohnsonks/Points_Region/main/mean
   // This function returns the style data for each of the variables we plot on
   // the map. We pass the value of the variable into two separate functions
   // to calculate the color and radius.
+  console.log(data);
   function styleInfo(feature) {
     return {
       opacity: 1,
@@ -93,7 +91,7 @@ d3.json("https://raw.githubusercontent.com/kylejohnsonks/Points_Region/main/mean
     },
   // We set the style for each circleMarker using our styleInfo function.
     style: styleInfo,
- // We create a popup for each circleMarker to display the magnitude and location of the earthquake
+
  //  after the marker has been created and styled.
     onEachFeature: function(feature, layer) {
         layer.bindPopup("Precipitation: " + feature.properties.precipitation + "<br>Province: " + feature.properties.province);
