@@ -24,7 +24,7 @@ def index():
 @app.route('/predict/<province>/<variety>/<precipitation>/<temperature>/<price>')
 def inputs():
     #province List
-    provinces=['Oregon', 'Alsace', 'California', 'Sicilia', 'Aquitaine','Washington', 'Burgundy', 'New York', 'Tuscany', 'Piemonte','Veneto','Champagne-Ardenne']
+    provinces=['Alsace','Aquitaine','Burgundy','California','Champagne-Ardenne','New York','Oregon','Piemonte','Sicilia','Tuscany','Veneto','Washington']
 
     #variety list
     varieties=['Barbera','Bordeaux-style Red Blend','Bordeaux-style White Blend','Cabernet Franc','Cabernet Sauvignon','Champagne Blend','Chardonnay','Corvina','Dolcetto','Garganega','Gewurztraminer','Glera','Grenache','Malbec','Meritage','Merlot','Moscato','Mourvedre','Nebbiolo','Nero dAvola','Petit Verdot','Petite Sirah','Pinot Blanc','Pinot Grigio','Pinot Gris','Pinot Noir','Red Blend','Rhone-style Red Blend','Rhone-style White Blend','Riesling','Rose','Sangiovese','Sangiovese Grosso','Sauvignon Blanc','Sparkling Blend','Syrah','Tempranillo','Vermentino','Viognier','White Blend','Zinfandel']
