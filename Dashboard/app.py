@@ -48,7 +48,7 @@ def inputs(province,variety,price,temperature,precipitation):
     for c in df_columns:
         df[c]=[0]
 
-    #use province variable to set df[pr ovince]=1, same for variety, df[precip]=precip
+    #use province variable to set df[pr ovince]=1, same for variety, df[precip]=scaled data values
     df[province]=1
     df[variety]=1
     df['precipitation']=scaled_data[0][0]
@@ -62,12 +62,9 @@ def inputs(province,variety,price,temperature,precipitation):
     result = model.predict(df)
 
     #return prediction to html    
-    result2 = str(result)
-    return jsonify(result2)
+    result = str(int(round(result[0],0)))
 
-@app.route('/reset')
-def reset_page():
-    return index()
+    return jsonify(result)
 
 if __name__ == "__main__":
     app.run(debug=True)
