@@ -17,6 +17,12 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+#reset button function
+@app.route('/reset')
+def reset_page():
+    return index()
+
+
 #/predict/Oregon/Pinot Gris/14/8.68/440.1
 @app.route('/predict/<province>/<variety>/<price>/<temperature>/<precipitation>')
 
