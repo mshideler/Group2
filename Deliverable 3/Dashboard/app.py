@@ -5,7 +5,7 @@ from unittest import result
 from flask import Flask, render_template, redirect, session, jsonify
 from joblib import load
 import pandas as pd
-#from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LinearRegression
 
 
 # Create a new Flask instance
@@ -17,9 +17,23 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route('/predict/<province>/<variety>/<precipitation>/<temperature>/<price>')
+#/predict/Oregon/Pinot Gris/14/8.68/440.1
+@app.route('/predict/<province>/<variety>/<price>/<temperature>/<precipitation>')
 
-def inputs(province,variety,precipitation,temperature,price):
+def inputs(province,variety,price,temperature,precipitation):
+    #create df to pass to scaler, add captured values
+    scale_df=pd.DataFrame()
+    scale_df['precipitation']=[precipitation]
+    scale_df['temperature']=[temperature]
+    scale_df['price']=[price]
+
+    #load the saved scaler
+    scaler=load('Static/Scaler_MLv4.joblib')
+
+    #scale the df
+    scaled_data=scaler.transform(scale_df)
+
+
 
     #province List
     provinces=['Alsace','Aquitaine','Burgundy','California','Champagne-Ardenne','New York','Oregon','Piemonte','Sicilia','Tuscany','Veneto','Washington']
@@ -34,12 +48,12 @@ def inputs(province,variety,precipitation,temperature,price):
     for c in df_columns:
         df[c]=[0]
 
-    #use province variable to set df[province]=1, same for variety, df[precip]=precip
+    #use province variable to set df[pr ovince]=1, same for variety, df[precip]=precip
     df[province]=1
     df[variety]=1
-    df['precipitation']=precipitation
-    df['temperature']=temperature
-    df['price']=price
+    df['precipitation']=scaled_data[0][0]
+    df['temperature']=scaled_data[0][1]
+    df['price']=scaled_data[0][2]
 
     #Load ML model
     model=load('Static/MLv4.joblib')
