@@ -1,0 +1,27 @@
+CREATE TABLE weather_data (
+	Prov_Weather VARCHAR NOT NULL,
+	Year_Weather INT NOT NULL,
+	Precipitation DECIMAL NOT NULL,
+	Temperature DECIMAL NOT NULL,
+	Timeseries VARCHAR NOT NULL
+);
+
+SELECT * FROM weather_data;
+
+CREATE TABLE wine_data (
+	points INT NOT NULL,
+	price INT NOT NULL,
+	province VARCHAR NOT NULL,
+	variety VARCHAR NOT NULL,
+	winery VARCHAR NOT NULL,
+	year INT NOT NULL
+);
+
+SELECT * FROM wine_data;
+
+CREATE TABLE wine_and_weather_table
+AS (SELECT * FROM wine_data 
+	LEFT JOIN weather_data ON wine_data.province=weather_data.Prov_Weather AND wine_data.year=weather_data.Year_Weather
+    WHERE weather_data.Timeseries = 'Historical');
+	
+SELECT * FROM wine_and_weather_table;
