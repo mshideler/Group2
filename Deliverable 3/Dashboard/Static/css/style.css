@@ -1,6 +1,6 @@
 body {
     background-color: #38042F;  }
   .jumbotron {    color: #000000;    background-size: 25% 25%;    text-align: center; } 
-  
+  #result {text-align: center; text-size-adjust: 400%; color: #38042F}
   #mapid { height: 500px; width: 930px; align-items: right}
   

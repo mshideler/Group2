@@ -27,7 +27,7 @@ function ML(event) {
   fetch(url)
     .then(response => response.json())
     // .then(result => console.log(result))
-    .then(result=>document.getElementById("result").innerHTML=result);
+    .then(result=>document.getElementById("result").innerHTML='<h1>'+result+'</h1>');
   }
 
 //watch for Button click 
