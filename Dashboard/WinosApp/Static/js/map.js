@@ -30,7 +30,7 @@ d3.json("https://raw.githubusercontent.com/kylejohnsonks/Points_Region/main/mean
       return L.marker(latlng, geojsonMarkerOptions);
     },
     onEachFeature: function(feature, layer) {
-      layer.bindPopup("Precipitation: " + feature.properties.precipitation + "<br>Province: " + feature.properties.province);
+      layer.bindPopup("Province: " + feature.properties.province+ "<br>Avg Precipitation: " + feature.properties.precipitation + "<br>Avg Temperature: "+feature.properties.temperature+"<br>Avg Wine Rating: "+feature.properties.points+"<br>(2016 data)");
     }
   }).addTo(map)
 });

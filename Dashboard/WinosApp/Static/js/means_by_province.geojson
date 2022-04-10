@@ -9,7 +9,7 @@
     },
     "properties": {
     "province":"Alsace",
-    "points":89.21052632,
+    "points":89,
     "year":2016,
     "precipitation":925.96,
     "temperature":10.68
@@ -23,7 +23,7 @@
     },
     "properties": {
     "province":"Aquitaine",
-    "points":86.47142857,
+    "points":86,
     "year":2016,
     "precipitation":884.1,
     "temperature":13.76
@@ -37,7 +37,7 @@
     },
     "properties": {
     "province":"Burgundy",
-    "points":86.35135135,
+    "points":86,
     "year":2016,
     "precipitation":806.99,
     "temperature":11.52
@@ -51,7 +51,7 @@
     },
     "properties": {
     "province":"California",
-    "points":88.47758285,
+    "points":88,
     "year":2016,
     "precipitation":637.88,
     "temperature":15.08
@@ -65,7 +65,7 @@
     },
     "properties": {
     "province":"Champagne-Ardenne",
-    "points":93.83333333,
+    "points":94,
     "year":2012,
     "precipitation":890.94,
     "temperature":11.03
@@ -79,7 +79,7 @@
     },
     "properties": {
     "province":"New York",
-    "points":87.79787234,
+    "points":88,
     "year":2016,
     "precipitation":927.62,
     "temperature":9.03
@@ -93,7 +93,7 @@
     },
     "properties": {
     "province":"Oregon",
-    "points":89.44537815,
+    "points":89,
     "year":2016,
     "precipitation":749.92,
     "temperature":9.87
@@ -107,7 +107,7 @@
     },
     "properties": {
     "province":"Piemonte",
-    "points":87.6,
+    "points":88,
     "year":2016,
     "precipitation":1186.47,
     "temperature":10.74
@@ -121,7 +121,7 @@
     },
     "properties": {
     "province":"Sicilia",
-    "points":87.66666667,
+    "points":88,
     "year":2016,
     "precipitation":459.21,
     "temperature":17.82
@@ -135,7 +135,7 @@
     },
     "properties": {
     "province":"Tuscany",
-    "points":87.69767442,
+    "points":88,
     "year":2015,
     "precipitation":533.9,
     "temperature":14.09
@@ -149,7 +149,7 @@
     },
     "properties": {
     "province":"Veneto",
-    "points":88.26760563,
+    "points":88,
     "year":2016,
     "precipitation":890.73,
     "temperature":14.27
@@ -163,7 +163,7 @@
     },
     "properties": {
     "province":"Washington",
-    "points":87.44247788,
+    "points":87,
     "year":2016,
     "precipitation":1103.25,
     "temperature":9.64
