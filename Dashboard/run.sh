@@ -1,0 +1,1 @@
+FLASK_APP=WinosApp/app.py flask run
