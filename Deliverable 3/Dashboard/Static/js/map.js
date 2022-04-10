@@ -8,7 +8,7 @@ let satelliteStreets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/sate
 // Create the map object with center, zoom level and default layer.
 let map = L.map('mapid', {
 	center: [38, -50],
-	zoom: 4,
+	zoom: 3,
 	layers: [satelliteStreets]
 });
 
@@ -40,65 +40,66 @@ d3.json("https://raw.githubusercontent.com/kylejohnsonks/Points_Region/main/mean
   // This function returns the style data for each of the variables we plot on
   // the map. We pass the value of the variable into two separate functions
   // to calculate the color and radius.
-  console.log(data);
-  function styleInfo(feature) {
-    return {
-      opacity: 1,
-      fillOpacity: 1,
-      fillColor: getColor(feature.properties.precipitation),
-      color: "#000000",
-      radius: getRadius(feature.properties.precipitation),
-      stroke: true,
-      weight: 0.5
-    };
-  }
+
+
+  // function styleInfo(feature) {
+  //   return {
+  //     opacity: 1,
+  //     fillOpacity: 1,
+  //     fillColor: getColor(feature.properties.precipitation),
+  //     color: "#000000",
+  //     radius: getRadius(feature.properties.precipitation),
+  //     stroke: true,
+  //     weight: 0.5
+  //   };
+  // }
 
 // This function determines the color of the marker based on value of variable
-  function getColor(precipitation) {
-    if (precipitation > 1100) {
-      return "#1E3F66";
-    }
-    if (precipitation > 900) {
-      return "#2E5984";
-    }
-    if (precipitation > 800) {
-      return "#528AAE";
-    }
-    if (precipitation > 700) {
-      return "#73a5c6";
-    }
-    if (precipitation > 600) {
-      return "#91bad6";
-    }
-    if (precipitation > 400) {
-      return "#bcd2e8";
-    }
-    return "#000000";
-  }
+  // function getColor(precipitation) {
+    // if (precipitation > 1100) {
+      // return "#1E3F66";
+    // }
+  //   if (precipitation > 900) {
+  //     return "#2E5984";
+  //   }
+  //   if (precipitation > 800) {
+  //     return "#528AAE";
+  //   }
+  //   if (precipitation > 700) {
+  //     return "#73a5c6";
+  //   }
+  //   if (precipitation > 600) {
+  //     return "#91bad6";
+  //   }
+  //   if (precipitation > 400) {
+  //     return "#bcd2e8";
+  //   }
+  //   return "#000000";
+  // }
 
-  // This function determines the radius of the  marker based on its magnitude.
+  // This function determines the radius of the  marker based on variable value.
 
-  function getRadius(precipitation) {
-    return precipitation / 25;
-  }
+  // function getRadius(precipitation) {
+    // return precipitation / 50;
+  // }
 
   // Creating a GeoJSON layer with the retrieved data.
   L.geoJson(data, {
     // We turn each feature into a circleMarker on the map.
+
     pointToLayer: function(feature, latlng) {
-          console.log("Latlng:"+latlng);
           return L.circleMarker(latlng);
     },
   // We set the style for each circleMarker using our styleInfo function.
-    style: styleInfo,
+    // style: styleInfo,
 
  //  after the marker has been created and styled.
     onEachFeature: function(feature, layer) {
         layer.bindPopup("Precipitation: " + feature.properties.precipitation + "<br>Province: " + feature.properties.province);
-}
+    }
 }).addTo(precipitation);
 
-// Then we add the earthquake layer to our map.
+// Then we add the layer to our map.
 precipitation.addTo(map);  
 
 

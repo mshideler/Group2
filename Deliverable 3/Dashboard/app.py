@@ -1,6 +1,8 @@
 
 # Import dependencies
-from flask import Flask, render_template
+from unittest import result
+
+from flask import Flask, render_template, redirect, session, jsonify
 from joblib import load
 import pandas as pd
 #from sklearn.linear_model import LinearRegression
@@ -13,7 +15,7 @@ app = Flask(__name__)
 # Define the starting point or root
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template("index.html")
 
 @app.route('/predict/<province>/<variety>/<precipitation>/<temperature>/<price>')
 
@@ -47,8 +49,7 @@ def inputs(province,variety,precipitation,temperature,price):
 
     #return prediction to html    
     result2 = str(result)
-
-    return result2
+    return jsonify(result2)
 
 if __name__ == "__main__":
     app.run(debug=True)

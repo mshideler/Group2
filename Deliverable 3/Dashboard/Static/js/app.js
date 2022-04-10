@@ -22,8 +22,14 @@ function ML(event) {
     url+=values[value]+'/';
   }
   url=url.slice(0,-1);
-  window.location.href=url;
-}
+  console.log(url)
+  // window.location.href=url;
+  fetch(url)
+    .then(response => response.json())
+    // .then(result => console.log(result))
+    .then(result=>document.getElementById("result").innerHTML=result);
+  }
+
 //watch for Button click 
 d3.select("a").on("click", ML);
 
