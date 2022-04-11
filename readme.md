@@ -226,13 +226,11 @@ We decided to first try using a Multiple Linear Regression model theorizing it m
 
 We used 'Train, Test, Split' and fit our model with 'X_train', and 'y_train'. We predicited using X_test. Our Mean_squared_error and R2_score came out as '5.7334', and '.33225' respectively
 
-![This is an image](https://github.com/kylejohnsonks/Group2/blob/main/Resources/r2score.png)
-
 Due to the scores we tried to determine the importance of all our features, and found that features 53, 54, and 55 were our more important feratures so reran the model using only these three features.
 
 Our mean_squared_error improved somewhat from 5.7334 to 6.17244, however our R_2 score decreased from .33225 to .28113.
 
-
+![This is an image](https://github.com/kylejohnsonks/Group2/blob/main/Resources/r2score.png)
 
 ## **Deep Learning** 
 
