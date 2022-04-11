@@ -34,12 +34,10 @@ def inputs(province,variety,price,temperature,precipitation):
     scale_df['price']=[price]
 
     #load the saved scaler
-    scaler=load('Static/js/Scaler_MLv4.joblib')
+    # scaler=load('Static/js/Scaler_MLv4.joblib')
 
     #scale the df
     scaled_data=scaler.transform(scale_df)
-
-
 
     #province List
     provinces=['Alsace','Aquitaine','Burgundy','California','Champagne-Ardenne','New York','Oregon','Piemonte','Sicilia','Tuscany','Veneto','Washington']
@@ -62,8 +60,8 @@ def inputs(province,variety,price,temperature,precipitation):
     df['price']=scaled_data[0][2]
 
     #Load ML model
-    model=load('Static/js/MLv4.joblib')
-    
+    # model=load('Static/js/MLv4.joblib')
+        
     #pass df to model for prediction
     result = model.predict(df)
 
