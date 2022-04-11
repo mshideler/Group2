@@ -1,0 +1,10 @@
+Summary
+Welcome to the Group 2 dashboard where we explored if there is a relationship between quality of wine and environmental variables such as 
+geography, temperature and precipitation.  Based on our analysis, there is no relationship. The R2 value for the Multiple Linear Regression 
+model we used is about 33%, which indicates the model isn’t a good fit as can be seen in the charts for Predicted v Actual Ratings by Province 
+and Wine Ratings by Region.  The Wine Ratings by Region chart is interactive so that a single province can be viewed at one time instead of 
+all provinces at once.  The interactive map shows average temperature, precipitation and pricing for each province analyzed.  Finally, the Wine 
+Rating area is also interactive.  Feel free to change province, variety of wine, price, temperature and precipitation and then click the “Predict”
+ button to see what wine rating is produced using our model; however, considering the inaccuracy of our model, don’t rely on it as valuable 
+information.  We feel the model would be improved with different data such as production levels, quality of grapes, types of grapes, 
+and quality of soil.
