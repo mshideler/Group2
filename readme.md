@@ -62,7 +62,7 @@ The topic of this project is predicting the quality of wine based on environment
 
 * *Sicily, Italy*
 
-![This is an image](https://github.com/kylejohnsonks/Group2/blob/kyle/Resources/Map.png)
+![This is an image](https://github.com/kylejohnsonks/Group2/blob/main/Resources/Map.png)
 
 
 
