@@ -249,6 +249,3 @@ After compiling and fitting our model we ran it with 10 training epochs with the
 
 
 
-
-
-
