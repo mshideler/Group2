@@ -1,0 +1,12 @@
+body {
+    background-color: #38042F;  }
+.jumbotron {color: #FFFFFF;
+  background-color: #38042F;
+  background-image: url("../images/grapesbackground.png");
+  background-repeat: repeat-x;
+  text-align: center;
+  text-shadow: black 1px 1px 30px;
+}
+#result {text-align: center; text-size-adjust: 400%; color: #38042F}
+#mapid { height: 500px; width: 930px; align-items: right}
+  
