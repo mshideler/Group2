@@ -9,7 +9,7 @@ from sklearn.linear_model import LinearRegression
 
 
 # Create a new Flask instance
-app = Flask(__name__,template_folder='Templates')
+app = Flask(__name__,template_folder='templates')
 
 
 # Define the starting point or root
