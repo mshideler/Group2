@@ -15,8 +15,6 @@ app = Flask(__name__,template_folder='templates')
 # Define the starting point or root
 @app.route('/')
 def index():
-    print(os.getcwd())
-    print(os.listdir())
     return render_template("index.html")
 
 #reset button function
@@ -71,6 +69,10 @@ def inputs(province,variety,price,temperature,precipitation):
     result = str(int(round(result[0],0)))
 
     return jsonify(result)
+
+@app.route("/blah")
+def blah():
+    return jsonify([os.getcwd(),os.listdir()])
 
 if __name__ == "__main__":
     app.run(debug=True)
