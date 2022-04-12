@@ -1,1 +1,1 @@
-FLASK_APP=WinosApp/app.py flask run
+FLASK_APP=winosapp/app.py flask run
