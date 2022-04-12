@@ -1,7 +1,7 @@
 
 # Import dependencies
 from unittest import result
-
+import os
 from flask import Flask, render_template, redirect, session, jsonify
 from joblib import load
 import pandas as pd
@@ -71,4 +71,6 @@ def inputs(province,variety,price,temperature,precipitation):
     return jsonify(result)
 
 if __name__ == "__main__":
+    print(os.getcwd())
+    print(os.listdir())
     app.run(debug=True)
