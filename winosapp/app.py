@@ -34,7 +34,7 @@ def inputs(province,variety,price,temperature,precipitation):
     scale_df['price']=[price]
 
     #load the saved scaler
-    scaler=load('scaler_mlv4.joblib')
+    scaler=load('https://github.com/kylejohnsonks/Group2/blob/main/winosapp/scaler_mlv4.joblib?raw=true')
 
     #scale the df
     scaled_data=scaler.transform(scale_df)
@@ -60,7 +60,7 @@ def inputs(province,variety,price,temperature,precipitation):
     df['price']=scaled_data[0][2]
 
     #Load ML model
-    model=load('mlv4.joblib')
+    model=load('https://github.com/kylejohnsonks/Group2/blob/main/winosapp/mlv4.joblib?raw=true')
         
     #pass df to model for prediction
     result = model.predict(df)
