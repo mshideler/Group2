@@ -72,7 +72,7 @@ def inputs(province,variety,price,temperature,precipitation):
 
 @app.route("/blah")
 def blah():
-    return jsonify([os.getcwd(),os.listdir()])
+    return jsonify([os.getcwd(),os.listdir('winosapp')])
 
 if __name__ == "__main__":
     app.run(debug=True)
