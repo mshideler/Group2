@@ -1,1 +1,1 @@
-web: gunicorn WinosApp.app:app
+web: gunicorn winosapp.app:app
