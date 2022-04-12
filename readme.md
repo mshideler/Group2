@@ -106,6 +106,7 @@ VSCode
 
 ## Dashboard
 
+![This is an image](https://github.com/kylejohnsonks/Group2/blob/main/Resources/Dashboard.png)
 
 
 ## Machine Learning Flow Chart
@@ -246,7 +247,21 @@ After compiling and fitting our model we ran it with 10 training epochs with the
 
 # **Results of Analysis** 
 
- Our initial machine learning analysis used a multiple linear regression model due to it's ability to predict a continuous variable, such as a wine's quality rating. This model produced a mean squared error and R-2 Score that we found unsuitable to produce a valid conclusion to our hypothesis. With this in mind we decided to try to find the feature importance of all our model's features, we found that the features **"precipitation_scaled, temperature_scaled, and price_scaled (53, 54, and 55)"** were our most influential features and thus re-ran our model with just these three features. This iteration of the linear regression model produced a better Mean Squared Error, but a worse R-2 score. with this in mind we decided to try a Deep Learning model which is also capable of predicting continuous varaibles and may give us a better accuracy score, we were wrong. Our accuracy score for this model choice was nearly an absolute zero, with loss numbers ranging from (-134513.7500, -154096944.0000). Ultimately we came to the conclusion that climate conditions in a wine growing region just are not accurate predictors of a wine's quality. However we have theorized that winery and price could be much better indicator of wine quality for the same reasons that climate is not a good indicator, well respected wine producers and growers know how to mitigate the effects of climate to produce better quality wines from their region. Additionally we thought it may be interesting to look at the variety of grapes grown in each region over time, to see if farmers are changing the variety of grapes they grow in response to climate changes.  
+ Our initial machine learning analysis used a multiple linear regression model due to it's ability to predict a continuous variable, such as a wine's quality rating.
+ This model produced a mean squared error and R-2 Score that we found unsuitable to produce a valid conclusion to our hypothesis. 
+ With this in mind we decided to try to find the feature importance of all our model's features, we found that the features **"precipitation_scaled, 
+ temperature_scaled, and price_scaled (53, 54, and 55)"** were our most influential features and thus re-ran our model with just these three features. 
+ 
+This iteration of the linear regression model produced a better Mean Squared Error, but a worse R-2 score. with this in mind we decided to try a Deep Learning model 
+which is also capable of predicting continuous varaibles and may give us a better accuracy score, we were wrong. 
+Our accuracy score for this model choice was nearly an absolute zero, with loss numbers ranging from (-134513.7500, -154096944.0000). 
+
+Ultimately we came to the conclusion that climate conditions in a wine growing region just are not accurate predictors of a wine's quality. 
+However we have theorized that winery and price could be much better indicator of wine quality for the same reasons that climate is not a good indicator, well
+respected wine producers and growers know how to mitigate the effects of climate to produce better quality wines from their region. 
+
+Additionally we thought it may be interesting to look at the variety of grapes grown in each region over time, to see if farmers are changing the 
+variety of grapes they grow in response to climate changes.  
 
 
 
