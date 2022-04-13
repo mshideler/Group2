@@ -75,12 +75,16 @@ Python version 3.8.8
  - Tensor Flow
  - Pandas
  - Sklearn
+ - Train_test_split
+ - LinearRegression
 
 AWS
  - RDS
  - S3
 
-PostgreSQL/PGAdmin 
+PostgreSQL
+
+PGAdmin 
 
 Flask
 
@@ -98,6 +102,10 @@ Java Script
 
 VSCode
 
+Heroku
+
+GitHub
+
 
 ## Google Slides  
 
@@ -105,6 +113,10 @@ VSCode
 
 
 ## Dashboard
+
+[URL](https://group2winos.herokuapp.com)
+
+
 
 ![This is an image](https://github.com/kylejohnsonks/Group2/blob/main/Resources/Dashboard.png)
 
