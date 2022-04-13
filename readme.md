@@ -252,7 +252,7 @@ After compiling and fitting our model we ran it with 10 training epochs with the
  With this in mind we decided to try to find the feature importance of all our model's features, we found that the features **"precipitation_scaled, 
  temperature_scaled, and price_scaled (53, 54, and 55)"** were our most influential features and thus re-ran our model with just these three features. 
  
-This iteration of the linear regression model produced a better Mean Squared Error, but a worse R-2 score. with this in mind we decided to try a Deep Learning model 
+This iteration of the linear regression model produced a higher Mean Squared Error and lower R-2 score. With this in mind we decided to try a Deep Learning model 
 which is also capable of predicting continuous varaibles and may give us a better accuracy score, we were wrong. 
 Our accuracy score for this model choice was nearly an absolute zero, with loss numbers ranging from (-134513.7500, -154096944.0000). 
 
