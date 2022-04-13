@@ -1,0 +1,173 @@
+{
+   "type": "FeatureCollection",
+   "features": [
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 7.4113269,48.239496 ]
+    },
+    "properties": {
+    "province":"Alsace",
+    "points":89,
+    "year":2016,
+    "precipitation":925.96,
+    "temperature":10.68
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -0.491054,44.79684 ]
+    },
+    "properties": {
+    "province":"Aquitaine",
+    "points":86,
+    "year":2016,
+    "precipitation":884.1,
+    "temperature":13.76
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 3.736529,47.817659 ]
+    },
+    "properties": {
+    "province":"Burgundy",
+    "points":86,
+    "year":2016,
+    "precipitation":806.99,
+    "temperature":11.52
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -119.869986,37.128484 ]
+    },
+    "properties": {
+    "province":"California",
+    "points":88,
+    "year":2016,
+    "precipitation":637.88,
+    "temperature":15.08
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 4.678181,49.565312 ]
+    },
+    "properties": {
+    "province":"Champagne-Ardenne",
+    "points":94,
+    "year":2012,
+    "precipitation":890.94,
+    "temperature":11.03
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -75.832058,43.187082 ]
+    },
+    "properties": {
+    "province":"New York",
+    "points":88,
+    "year":2016,
+    "precipitation":927.62,
+    "temperature":9.03
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -120.672809,44.001141 ]
+    },
+    "properties": {
+    "province":"Oregon",
+    "points":89,
+    "year":2016,
+    "precipitation":749.92,
+    "temperature":9.87
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 12.548722,42.773796 ]
+    },
+    "properties": {
+    "province":"Piemonte",
+    "points":88,
+    "year":2016,
+    "precipitation":1186.47,
+    "temperature":10.74
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 14.140149,37.587529 ]
+    },
+    "properties": {
+    "province":"Sicilia",
+    "points":88,
+    "year":2016,
+    "precipitation":459.21,
+    "temperature":17.82
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 11.264825,43.417574 ]
+    },
+    "properties": {
+    "province":"Tuscany",
+    "points":88,
+    "year":2015,
+    "precipitation":533.9,
+    "temperature":14.09
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 11.836855,45.655544 ]
+    },
+    "properties": {
+    "province":"Veneto",
+    "points":88,
+    "year":2016,
+    "precipitation":890.73,
+    "temperature":14.27
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -120.444166,47.414923 ]
+    },
+    "properties": {
+    "province":"Washington",
+    "points":87,
+    "year":2016,
+    "precipitation":1103.25,
+    "temperature":9.64
+    }
+  }
+]
+}
